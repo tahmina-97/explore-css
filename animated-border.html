@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated rounded border</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #141b42;
+        }
+        .box{
+            position: relative;
+            width: 300px;
+            height: 350px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(12, 7, 35);
+            padding: 0 2rem;
+            color: white;
+            overflow: hidden;
+            border-radius: 20px;
+        }
+
+        .box h2,p{
+            padding-bottom: 2rem;
+            z-index: 10;
+            color: #d400d4;
+        }
+
+        .box::before{
+            content: "";
+            position: absolute;
+            height: 140%;
+            width: 150px;
+            background: linear-gradient(#00ccff, #d400d4);
+            animation: animate 4s linear infinite;
+
+        }
+
+        .box::after{
+            content: "";
+            position: absolute;
+            background: #141b42;
+            inset: 4px;
+            border-radius: 16px;
+
+
+        }
+
+        @keyframes animate{
+            0%{
+                transform: rotate(0deg);
+            }
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+  
+</head>
+<body>
+    <div class="box">
+        <h2>Animated Border</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet ducimus reprehenderit soluta dignissimos! Nostrum odit rem, quidem blanditiis officia dolorum minima perferendis earum. Debitis, earum!</p>
+    </div>
+</body>
+</html>
